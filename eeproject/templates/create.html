@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        /* CSS to initially hide the "End Voting" button */
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <div class="ccode">
+        <h2>Room Code </h2>
+        <p id="roomCode"></p> <!-- This paragraph will display the room code -->
+    </div>
+
+    <div class="inputnames">
+        <!-- Display input names here -->
+        <h2>People</h2>
+        <ul id="inputNamesList"></ul>
+    </div>
+
+    <button onclick="startVoting()" class="cbtn1">Start Voting</button>
+    <button onclick="endVoting()" class="cbtn1 hide" style="background-color: #ff1a1a;">End Voting</button>
+
+    <script>
+        // Retrieve input names from sessionStorage
+        var inputNames = JSON.parse(sessionStorage.getItem('inputNames'));
+
+        // Display input names in a list
+        var inputNamesList = document.getElementById('inputNamesList');
+        if (inputNames) {
+            inputNames.forEach(function(inputName) {
+                var listItem = document.createElement('li');
+                listItem.textContent = inputName;
+                inputNamesList.appendChild(listItem);
+            });
+        }
+
+        // Retrieve and display room code
+        var roomCode = localStorage.getItem('roomCode');
+        var roomCodeParagraph = document.getElementById('roomCode');
+        if (roomCodeParagraph) {
+            roomCodeParagraph.textContent = roomCode;
+        }
+
+        // Function to start voting
+        function startVoting() {
+            // Change the button style to disabled
+            var btn = document.querySelector('.cbtn1');
+            btn.classList.add('disabled');
+            btn.disabled = true;
+
+            // Show the "End Voting" button
+            var endBtn = document.querySelector('.hide');
+            endBtn.classList.remove('hide');
+        }
+
+        // Function to end voting
+        function endVoting() {
+            // Your code to end voting...
+        }
+    </script>
+</body>
+</html>

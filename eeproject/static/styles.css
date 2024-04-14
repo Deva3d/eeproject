@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+body{
+    background-color: black;
+    color: rgb(247, 238, 238);
+
+}
+.container{
+    text-align: center;
+    margin-top: 170px;
+}
+.container h1{
+    font-size: 2cm;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn1{
+    width: 120px;
+    height: 50px;
+    color: white;
+    background-color: #1D24CA;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 20px;
+    cursor: pointer;
+}
+.btn1:active{
+    background-color:#201658;
+}
+
+.modalcss {
+    display: none;
+    text-align: center;
+    background-color: #181818;
+    width: 400px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.modalcss h2 {
+    font-size: 1cm;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modalcss p, label {
+    font-size: 0.5cm;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+.close{
+    font-weight: 100;
+    font-size: medium;
+    cursor: pointer;
+}
+#roomcode {
+    color: white;
+}
+#personsInput {
+    text-align: center;
+    /* height: 200px; Set a fixed height */
+    overflow-y: hidden; /* Enable vertical scroll */
+}
+#personsInput input[type="text"] {
+    display: block;
+    margin: 10px auto; /* Center the input fields and add some vertical margin */
+    width: 80%; /* Adjust the width as needed */
+    padding: 5px; /* Add some padding for better spacing */
+}
+
+
+/* Shadow Overlay */
+#overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Ensure overlay appears below modal */
+}
+
+/* create.html */
+.cbtn1{
+    width: 120px;
+    height: 50px;
+    color: white;
+    background-color: #00e600;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 20px;
+    cursor: pointer;  
+}
+.cbtn1.disabled {
+    background-color: #808080;
+    cursor: not-allowed;
+}
+.ccode{
+    margin-top: 20px;
+}
+.ccode h2{
+    font-size: .8cm;
+}
+#roomCode {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.inputnames{
+    margin-top: 20px;
+}
+/* CSS for the displayed names */
+#inputNamesList {
+    margin-top: 10px;
+}
+
+#inputNamesList li {
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: white;
+   
+    
+}
+/* css of display join room */
+
+
+
+

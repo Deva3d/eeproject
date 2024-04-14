@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Voting</h1>
+        <button  class="btn1" onclick="openJoinRoomModal()">Join Room</button>
+        <button  class="btn1" onclick="openCreateRoomModal()">Make Room</button>
+    </div>
+
+      <!-- Create Room Modal -->
+      <div id="createRoomModal" class="modal modalcss">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Create Room</h2>
+            <p>Room Code: <span id="roomCode"></span></p>
+            <br>
+            <label for="numOfPersons">Number of Persons:</label>
+            <input type="number" id="numOfPersons">
+            <br><br>
+            <div id="personsInput"></div>
+            <br>
+            <button class="btn1 btn2" onclick="votingroom()">Create Room</button>
+            <br>
+            <span class="close"  onclick="closeCreateRoomModal()">Close</span>
+        </div>
+    </div>
+
+<!-- Join Room Modal -->
+<div class="joinroom modalcss modal" id="joinRoomModal">
+    <h2>Join Room</h2>
+    <br>
+    <label for="joinRoomCodeInput">Enter Room Code</label>
+    <br><br>
+    <input type="number" id="joinRoomCodeInput">
+    
+    <p id="joinRoomError" style="color: red;"></p> <!-- Error message for invalid code -->
+    <br>
+    <button class="btn1" id="joinRoomButton">Join Room</button>
+    <br>
+    <span class="close" onclick="closeJoinRoomModal()">Close</span>
+    
+</div>
+
+   
+     <!-- Shadow Overlay -->
+     <div id="overlay" onclick="closeCreateRoomModal()"></div>
+   <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
